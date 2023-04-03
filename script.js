@@ -37,7 +37,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   const slides = document.getElementsByClassName("slide");
-  const dots = document.getElementsByClassName("dot");
+
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -47,26 +47,6 @@ function showSlides(n) {
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+
   slides[slideIndex - 1].style.display = "block";
-}
-
-function initMap() {
-  // Koordinaten des Hotels
-  const hotelLocation = { lat: 51.435328, lng: 6.761103 };
-
-  // Karte erstellen
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: hotelLocation,
-    zoom: 15,
-  });
-
-  // Marker hinzufügen
-  const marker = new google.maps.Marker({
-    position: hotelLocation,
-    map: map,
-    title: "Unser Hotel in Duisburg",
-  });
 }
